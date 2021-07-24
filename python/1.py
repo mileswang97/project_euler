@@ -12,4 +12,3 @@ print(solution(1000))
 
 print(solution(10))
 
-print(sum(range(1,1000)))
