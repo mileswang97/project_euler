@@ -1,4 +1,5 @@
-import numpy as np
+from operator import mul
+from functools import reduce
 
 VALUE = (
     "73167176531330624919225119674426574742355349194934"
@@ -26,8 +27,8 @@ VALUE = (
 largest_product = 0
 
 for i in range(1000-13+1):
-    thirteen_adjacent_digits = VALUE[i:i+13]
-    current_product = np.product(np.array(thirteen_adjacent_digits))
+    thirteen_adjacent_digits = [int(k) for k in VALUE[i:i+13]]
+    current_product = reduce(mul, thirteen_adjacent_digits, 1)
     if current_product > largest_product:
         largest_product = current_product
 
