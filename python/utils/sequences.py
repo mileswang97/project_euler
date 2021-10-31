@@ -1,5 +1,6 @@
 import sympy
 import numpy as np
+from itertools import accumulate
 
 def fibonacci(n):
     fib_list = []
@@ -18,3 +19,5 @@ def squares(n: int) -> list:
 def powers(n: int, p: int) -> list:
     return list(np.power(np.arange(1,n+1), p))
 
+def triangles(n: int) -> list:
+    return list(accumulate(range(1, n+1)))
