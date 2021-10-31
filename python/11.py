@@ -22,3 +22,32 @@ VALUES = np.array(
     [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
     [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48],]
 )
+
+greatest_product = 0
+
+for i in range(20):
+    for j in range(20):
+        try:
+            right_product = np.product(VALUES[i:i+4,j])
+            if right_product > greatest_product:
+                greatest_product = right_product
+        except: pass
+        try: 
+            down_product = np.product(VALUES[i,j:j+4])
+            if down_product > greatest_product:
+                greatest_product = down_product
+        except: pass
+        try:
+            right_diag_product = np.product([VALUES[i+k, j+k] for k in range(4)])
+            if right_diag_product > greatest_product:
+                print("right_diag", right_diag_product)
+                greatest_product = right_diag_product
+        except: pass
+        try:
+            left_diag_product = np.product([VALUES[i+k, j-k] for k in range(4)])
+            if left_diag_product > greatest_product:
+                print("left_diag", left_diag_product)
+                greatest_product = left_diag_product
+        except: pass
+
+print(greatest_product)
