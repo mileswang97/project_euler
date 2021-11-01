@@ -32,3 +32,6 @@ def list_of_divisors(n: int) -> list:
                 divisor_list.append(int(n/i))
 
     return sorted(divisor_list)
+
+def factorial(n: int) -> int:
+    return math.factorial(n)
