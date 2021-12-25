@@ -28,7 +28,7 @@ there are technically 2(n-1) possible paths, but only (n-1) are known to be viab
 because the other path that connects to the same index in (n-1) is guaranteed to be worse.
 
 If we write a program that starts at the bottom row, and store optimal paths incrementally, there should
-be at most 2n(n+1) computations.
+be at most 2n(n+1) computations. (or just (n-1)(n-2)???)
 """
 
 from typing import Iterable

@@ -35,3 +35,8 @@ def list_of_divisors(n: int) -> list:
 
 def factorial(n: int) -> int:
     return math.factorial(n)
+
+def sum_of_divisors(n:int) -> int:
+    divisor_list = list_of_divisors(n)[:-1]
+    return sum(divisor_list)
+

@@ -21,3 +21,18 @@ def powers(n: int, p: int) -> list:
 
 def triangles(n: int) -> list:
     return list(accumulate(range(1, n+1)))
+
+def possible_sums_from_two_lists(a_list: list, b_list: list): 
+    sum_set = set()
+    if a_list == b_list:
+        for index in range(len(a_list)):
+            sums = [a_list[index] + b_list[i] for i in range(index, len(b_list))]
+            for sum in sums:
+                sum_set.add(sum)
+        return sum_set
+    else:
+        for index in range(len(a_list)):
+            sums = [a_list[index] + b_list[i] for i in range(len(b_list))]
+            for sum in sums:
+                sum_set.add(sum)
+        return sum_set
