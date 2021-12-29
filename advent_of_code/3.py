@@ -28,8 +28,28 @@ def bin_to_dec(list_of_bits):
 ## PART 2
 # find oxygen
 
-def find_common_bit_in_index(lines, index, most_or_least=True):
-    
-    return lines
+def filter_lines_by_index(lines, index, most_or_least=True):
+    lines_count = len(lines)
+    if lines_count == 1:
+        return lines
+    ones = sum(line[index] for line in lines)
+    keep_ones = ones >= lines_count/2
+    if most_or_least:
+        return [line for line in lines if line[index] == keep_ones]
+    else:
+        return [line for line in lines if line[index] != keep_ones]
 
 oxygen_list = deepcopy(lines)
+coo_scrubber_list = deepcopy(lines)
+
+for index in range(length):
+    oxygen_list = filter_lines_by_index(oxygen_list, index, most_or_least=True)
+
+print(oxygen_list)
+
+for index in range(length):
+    coo_scrubber_list = filter_lines_by_index(coo_scrubber_list, index, most_or_least=False)
+
+print(coo_scrubber_list)
+
+print(bin_to_dec(oxygen_list[0]) * bin_to_dec(coo_scrubber_list[0]))
