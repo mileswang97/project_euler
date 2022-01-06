@@ -9,8 +9,9 @@ with open("inputs/4a.txt", "r") as file:
     for index in range(len(lines)):
         lines[index] = lines[index].replace("\n", "")
     lines = [line for line in lines if line != '']
-    calls = lines[0]
+    calls = list(eval(lines[0]))
     cards = lines[1::]
+
 
 cards = list(grouper(cards, 5))
 
@@ -18,4 +19,4 @@ def array_like(n_tuple):
 
     return 
 
-print(cards)
+print(cards[0][1][3])
