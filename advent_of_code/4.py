@@ -1,9 +1,11 @@
 from itertools import zip_longest, chain
 import re
 
-def grouper(iterable, n, fillvalue=None):
-    args = [iter(iterable)] * n
-    return zip_longest(*args, fillvalue=fillvalue)
+def table_in_ten_lines():
+    # represent a table as a set of 5 rows, 5 columns
+
+
+    return 
 
 with open("inputs/4a.txt", "r") as file:
     lines = file.readlines()
@@ -15,10 +17,10 @@ with open("inputs/4a.txt", "r") as file:
     cards = [list(eval(re.sub("\s+", ",", line.strip()))) for line in cards]
     cards = [list(chain(*card)) for card in (grouper(cards, 5))]
 
-# gives winning indices given size of board
-# only rows and columns win according to spec
-def win_conditions(card_length) -> list:
-    cond_list = list()
+def take_a_turn(tables, number):
+    # removess number from all table rows and columns.
+    # If removing the numbers happens to creates an empty list, you have won.
+    
     
 
 
