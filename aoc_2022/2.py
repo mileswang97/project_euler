@@ -1,6 +1,7 @@
 from io import StringIO
 
-input = StringIO("""C Y
+input = StringIO(
+    """C Y
 C Z
 B Z
 A Z
@@ -2499,9 +2500,10 @@ A Z
 C Z
 A X
 A Y
-B Z""")
+B Z"""
+)
 
-hand_values = {'X': 1, 'Y': 2, 'Z': 3}
+hand_values = {"X": 1, "Y": 2, "Z": 3}
 wins = ["A Y", "B Z", "C X"]
 losses = ["B X", "C Y", "A Z"]
 ties = ["A X", "B Y", "C Z"]
@@ -2509,7 +2511,7 @@ ties = ["A X", "B Y", "C Z"]
 score = 0
 for line in input.readlines():
     line = line.replace("\n", "")
-    #print(line)
+    # print(line)
     score += hand_values[line[2]]
     if line in wins:
         score += 6
@@ -2518,12 +2520,12 @@ for line in input.readlines():
 
 print(score)
 
-round_values = {'X': 0, 'Y': 3, 'Z': 6}
+round_values = {"X": 0, "Y": 3, "Z": 6}
 rocks = ["A Y", "B X", "C Z"]
 papers = ["B Y", "A Z", "C X"]
 scissors = ["C Y", "B Z", "A X"]
 
-score = 0 
+score = 0
 input.seek(0)
 for line in input.readlines():
     line = line.replace("\n", "")

@@ -1,6 +1,7 @@
 from io import StringIO
 
-input = StringIO("""
+input = StringIO(
+    """
 4887
 9307
 8895
@@ -2250,14 +2251,15 @@ input = StringIO("""
 5245
 15319
 6704
-""")
+"""
+)
 
 list_of_calories = list()
 last_cal_sum = 0
 
 for line in input.readlines():
-    line = line.replace('\n', '')
-    if line == '':
+    line = line.replace("\n", "")
+    if line == "":
         list_of_calories.append(last_cal_sum)
         last_cal_sum = 0
     else:

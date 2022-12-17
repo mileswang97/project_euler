@@ -1,6 +1,7 @@
 from io import StringIO
 
-input = StringIO("""2-9,9-51
+input = StringIO(
+    """2-9,9-51
 33-51,45-73
 28-29,29-93
 37-47,37-48
@@ -1008,12 +1009,12 @@ input.seek(0)
 for line in input.readlines():
     line = line.replace("\n", "")
     line = line.replace("-", ",")
-    line = line.split(',')
+    line = line.split(",")
 
     starts = int(line[0]), int(line[2])
     ends = int(line[1]), int(line[3])
 
-    if starts[0] >=  starts[1] and ends[0] <= ends[1]:
+    if starts[0] >= starts[1] and ends[0] <= ends[1]:
         score += 1
         continue
     elif starts[1] >= starts[0] and ends[1] <= ends[0]:
@@ -1027,7 +1028,7 @@ input.seek(0)
 for line in input.readlines():
     line = line.replace("\n", "")
     line = line.replace("-", ",")
-    line = line.split(',')
+    line = line.split(",")
 
     starts = int(line[0]), int(line[2])
     ends = int(line[1]), int(line[3])
