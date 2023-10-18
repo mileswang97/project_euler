@@ -4,14 +4,15 @@ from typing import Iterable
 import numpy as np
 from numpy.core.defchararray import array
 
-with open('files/p067_triangle.txt', "r") as file:
+with open("files/p067_triangle.txt", "r") as file:
     triangle = file.readlines()
     for i in range(len(triangle)):
         line = triangle[i]
-        line = line.replace('\n', '')
-        line = line.split(' ')
+        line = line.replace("\n", "")
+        line = line.split(" ")
         line = [int(i) for i in line]
         triangle[i] = line
+
 
 def increment_path(
     array_previous: Iterable,
@@ -20,10 +21,11 @@ def increment_path(
     array_next = np.zeros(len(current_row))
     for i in range(len(array_next)):
         a = array_previous[i]
-        b = array_previous[i+1]
+        b = array_previous[i + 1]
         num_to_add = a if a > b else b
         array_next[i] = current_row[i] + num_to_add
     return array_next
+
 
 def main(triangle=triangle):
     array_previous = np.zeros(len(triangle) + 1)
@@ -34,7 +36,8 @@ def main(triangle=triangle):
             current_row=triangle[i],
         )
         array_previous = array_next
-    
+
     print(array_next)
+
 
 main()

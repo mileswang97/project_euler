@@ -2,27 +2,33 @@ import sympy
 import numpy as np
 from itertools import accumulate
 
-def fibonacci(n):
+
+def fibonacci(n: int) -> list:
     fib_list = []
     a, b = 0, 1
     while b < n:
-        a, b = b, a+b 
+        a, b = b, a + b
         fib_list.append(a)
     return fib_list
 
+
 def primes(n: int) -> list:
-    return list(sympy.sieve.primerange(0,n))
+    return list(sympy.sieve.primerange(0, n))
+
 
 def squares(n: int) -> list:
-    return list(np.square(np.arange(1,n+1)))
+    return list(np.square(np.arange(1, n + 1)))
+
 
 def powers(n: int, p: int) -> list:
-    return list(np.power(np.arange(1,n+1), p))
+    return list(np.power(np.arange(1, n + 1), p))
+
 
 def triangles(n: int) -> list:
-    return list(accumulate(range(1, n+1)))
+    return list(accumulate(range(1, n + 1)))
 
-def possible_sums_from_two_lists(a_list: list, b_list: list): 
+
+def possible_sums_from_two_lists(a_list: list, b_list: list) -> set:
     sum_set = set()
     if a_list == b_list:
         for index in range(len(a_list)):

@@ -2,7 +2,7 @@ from typing import final
 import sympy
 import numpy as np
 
-#prime_list = list(sympy.sieve.primerange(0,20))
+# prime_list = list(sympy.sieve.primerange(0,20))
 
 """
 def merge_dicts(dict1 : dict, dict2 : dict) -> dict:
@@ -42,23 +42,26 @@ def prime_factors_list(n: int) -> list:
     return
 """
 
+
 def largest_prime_power(prime, n):
     prime_power = prime
     extend_list = []
-    while prime_power*prime < n:
+    while prime_power * prime < n:
         extend_list.append(prime)
-        prime_power = prime_power*prime
+        prime_power = prime_power * prime
     return extend_list
+
 
 # much better way
 def prime_factors_list(n: int) -> list:
-    prime_list = list(sympy.sieve.primerange(0,n+1))
-    master_list = list(sympy.sieve.primerange(0,n+1))
+    prime_list = list(sympy.sieve.primerange(0, n + 1))
+    master_list = list(sympy.sieve.primerange(0, n + 1))
     for prime in prime_list:
         extend_list = largest_prime_power(prime, n)
         master_list.extend(extend_list)
     master_list = sorted(master_list)
     return master_list
+
 
 prod = 1
 for value in prime_factors_list(20):

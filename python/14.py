@@ -1,14 +1,15 @@
-def collatz_chain(n: int, n_list:list) -> list:
+def collatz_chain(n: int, n_list: list) -> list:
     if not n_list:
         n_list.append(n)
     if n == 1:
         return n_list
     if n % 2 == 0:
-        n_list.append(int(n/2))
-        return collatz_chain(int(n/2), n_list)
+        n_list.append(int(n / 2))
+        return collatz_chain(int(n / 2), n_list)
     if n % 2 == 1:
-        n_list.append(3*n+1)
-        return collatz_chain(3*n+1, n_list)
+        n_list.append(3 * n + 1)
+        return collatz_chain(3 * n + 1, n_list)
+
 
 i_temp = 0
 length_temp = 0

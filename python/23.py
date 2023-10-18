@@ -18,9 +18,9 @@ from utils.sequences import *
 problem_list = range(1, 28124)
 
 sum_divisors_list = [sum_of_divisors(i) for i in problem_list]
-abundant_list = [i for i in problem_list if i < sum_divisors_list[i-1]] 
+abundant_list = [i for i in problem_list if i < sum_divisors_list[i - 1]]
 
-#print(abundant_list)
+# print(abundant_list)
 # 12, 18, 20, 24, 30
 
 sum_of_two_abundants = possible_sums_from_two_lists(abundant_list, abundant_list)

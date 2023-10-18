@@ -26,8 +26,8 @@ VALUE = (
 
 largest_product = 0
 
-for i in range(1000-13+1):
-    thirteen_adjacent_digits = [int(k) for k in VALUE[i:i+13]]
+for i in range(1000 - 13 + 1):
+    thirteen_adjacent_digits = [int(k) for k in VALUE[i : i + 13]]
     current_product = reduce(mul, thirteen_adjacent_digits, 1)
     if current_product > largest_product:
         largest_product = current_product

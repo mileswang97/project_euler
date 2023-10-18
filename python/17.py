@@ -1,14 +1,14 @@
 # definitions
 
 digits = {
-    1: "one", 
-    2: "two", 
-    3: "three", 
-    4: "four", 
-    5: "five", 
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
     6: "six",
     7: "seven",
-    8: "eight", 
+    8: "eight",
     9: "nine",
     0: "",
 }
@@ -28,12 +28,12 @@ one_tens = {
 
 tens = {
     2: "twenty",
-    3: "thirty", 
-    4: "forty", 
-    5: "fifty", 
+    3: "thirty",
+    4: "forty",
+    5: "fifty",
     6: "sixty",
     7: "seventy",
-    8: "eighty", 
+    8: "eighty",
     9: "ninety",
     0: "",
 }
@@ -54,17 +54,28 @@ for i in range(1, 1001):
     elif i < 1000:
         istr = str(i)
         if istr[1] == "1":
-            master_string = master_string + digits[int(istr[0])] + "hundredand" + one_tens[int(istr[1::])]
+            master_string = (
+                master_string
+                + digits[int(istr[0])]
+                + "hundredand"
+                + one_tens[int(istr[1::])]
+            )
             continue
         else:
-            master_string = master_string + digits[int(istr[0])] + "hundredand" + tens[int(istr[1])] + digits[int(istr[2])]
+            master_string = (
+                master_string
+                + digits[int(istr[0])]
+                + "hundredand"
+                + tens[int(istr[1])]
+                + digits[int(istr[2])]
+            )
             continue
     elif i == 1000:
         master_string = master_string + "onethousand"
 
-#print("length", len(list(master_string)))
+# print("length", len(list(master_string)))
 
-#print(master_string)
+# print(master_string)
 
 # this is so boosted but i dont care for this problem
 # error in code when it reaches one hundred, just adds "hundredand" even if the number is X00.

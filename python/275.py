@@ -1,4 +1,5 @@
 import math
+
 # for n > 2
 
 # X(n) = summation of X(n-2) * (height choose 2)
@@ -15,14 +16,15 @@ def balanced_sculptures(n, blocks=0):
 
 
 # Brute Force method
-#form of structure:
+# form of structure:
 # [(x, y), ...]
+
 
 def create_all_structures(n):
     # blocks have to all be connected to each other
     solution_set = set()
-    structure = [(0,0), (0,1)]
-    for i in range(n-1):
+    structure = [(0, 0), (0, 1)]
+    for i in range(n - 1):
         # add a block to the structure
         print("pepelaugh")
     if is_balanced(structure):
@@ -30,6 +32,7 @@ def create_all_structures(n):
         if reflection not in solution_set:
             solution_set.add(structure)
     return solution_set
+
 
 def is_balanced(structure):
     x_list = [a for (a, b) in structure]
@@ -39,10 +42,11 @@ def is_balanced(structure):
         return True
     return False
 
-pass_struct = [(0,0), (0,1), (0,2), (1,0), (2,0), (3,0)]
+
+pass_struct = [(0, 0), (0, 1), (0, 2), (1, 0), (2, 0), (3, 0)]
 print("pass", is_balanced(pass_struct))
 
-fail_struct = [(0,0), (0,1), (0,2), (1,0), (2,0), (3,0)]
+fail_struct = [(0, 0), (0, 1), (0, 2), (1, 0), (2, 0), (3, 0)]
 
 
 """
@@ -80,14 +84,14 @@ If not, doesn't work.
 PROBLEM: some shapes cannot be created (do not have lower left starting block)
 """
 
-#print(generate_binary(2))
+# print(generate_binary(2))
+
 
 def special_add(structure_set: set, structure):
     positional_variations = []
     for i in range(10):
         for j in range(10):
-            new_structure_add = [(a+i, b+j) for (a,b) in structure]
-            new_structure_minus = [(a-i, b-j) for (a,b) in structure]
+            new_structure_add = [(a + i, b + j) for (a, b) in structure]
+            new_structure_minus = [(a - i, b - j) for (a, b) in structure]
             positional_variations.append(new_structure_minus)
             positional_variations.append(new_structure_add)
-    

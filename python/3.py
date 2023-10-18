@@ -2,7 +2,7 @@ import sympy
 
 number = 600851475143
 
-primelist = list(sympy.sieve.primerange(0,100000))
+primelist = list(sympy.sieve.primerange(0, 100000))
 
 templist = []
 for prime in primelist:
